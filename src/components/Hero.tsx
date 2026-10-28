@@ -9,6 +9,7 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
+      data-top-field
       className="relative isolate flex h-svh min-h-[560px] flex-col sm:h-[min(100svh,980px)] sm:min-h-[600px] overflow-hidden bg-field text-on-field"
     >
       <SiteNav tone="field" />

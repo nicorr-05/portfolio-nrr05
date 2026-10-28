@@ -85,6 +85,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
+  Safari 26 ignores theme-color and tints the status bar from the root
+  background, so pages that open on the field paint the canvas with it.
+  Body keeps paper, so only the bars and the overscroll pick this up.
+*/
+html:has([data-top-field]) {
+  background: var(--field);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
