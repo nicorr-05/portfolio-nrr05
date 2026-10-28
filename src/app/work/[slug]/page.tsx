@@ -39,7 +39,7 @@ export default async function CasePage(props: PageProps<"/work/[slug]">) {
   return (
     <>
       <SiteNav />
-      <main>
+      <main id="main">
         <header className="wrap pt-10 pb-16 sm:pt-16 sm:pb-24">
           <Link href="/#work" className="group -my-2 inline-flex min-h-11 items-center gap-2 text-[0.95rem] text-muted no-underline hover:text-ink">
             <ArrowRight className="size-4 rotate-180 transition-transform duration-300 group-hover:-translate-x-0.5" />

@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="flex min-h-svh flex-col overflow-hidden bg-field text-on-field">
       <SiteNav tone="field" />
-      <main className="flex flex-1 flex-col justify-end">
+      <main id="main" className="flex flex-1 flex-col justify-end">
         <div className="wrap mb-10 max-w-xl">
           <h1 className="text-[1.65rem] leading-tight font-medium tracking-[-0.015em] sm:text-[2.1rem]">
             This page doesn&apos;t exist.

@@ -40,7 +40,7 @@ export function Link({ tone, broken = false }: { tone: Tone; broken?: boolean })
     return (
       <div aria-hidden className="relative flex items-center justify-center self-stretch @xl:self-center">
         <div className="h-8 w-px border-l border-dashed border-status-critical @xl:h-px @xl:w-full @xl:min-w-10 @xl:border-l-0 @xl:border-t" />
-        <span className="absolute grid size-6 place-items-center rounded-full bg-status-critical text-[0.8rem] font-bold text-white">
+        <span className="absolute grid size-6 place-items-center rounded-full bg-status-critical text-white">
           <svg viewBox="0 0 12 12" className="size-3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
             <path d="M3 3l6 6M9 3l-6 6" />
           </svg>

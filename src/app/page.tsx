@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <main>
+      <main id="main">
         {/* Intro + CV */}
         <section id="cv" aria-label="About" className="wrap grid gap-14 py-24 sm:py-32 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-24">
           <p className="max-w-[34ch] text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.32] tracking-[-0.012em] text-pretty">

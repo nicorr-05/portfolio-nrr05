@@ -7,17 +7,14 @@ import "./globals.css";
 const archivo = localFont({
   src: "../fonts/archivo-wdth.woff2",
   variable: "--font-archivo",
-  weight: "100 900",
+  weight: "700 800",
   display: "swap",
 });
 
 const hanken = localFont({
-  src: [
-    { path: "../fonts/hanken-grotesk.woff2", style: "normal" },
-    { path: "../fonts/hanken-grotesk-italic.woff2", style: "italic" },
-  ],
+  src: "../fonts/hanken-grotesk.woff2",
   variable: "--font-hanken",
-  weight: "100 900",
+  weight: "400 600",
   display: "swap",
 });
 
@@ -52,6 +49,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${archivo.variable} ${hanken.variable}`}>
       <body>
+        <a
+          href="#main"
+          className="sr-only z-50 rounded-md bg-ink px-4 py-3 text-paper focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
+        >
+          Skip to content
+        </a>
         {children}
         <Analytics />
       </body>
