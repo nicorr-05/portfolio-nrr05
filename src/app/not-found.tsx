@@ -5,7 +5,7 @@ import { SiteNav } from "@/components/SiteNav";
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-svh flex-col overflow-hidden bg-field text-on-field">
+    <div data-top-field className="flex min-h-svh flex-col overflow-hidden bg-field text-on-field">
       <SiteNav tone="field" />
       <main id="main" className="flex flex-1 flex-col justify-end">
         <div className="wrap mb-10 max-w-xl">
