@@ -47,7 +47,7 @@ export function AssistantEvals() {
                     key={s.label}
                     tabIndex={0}
                     aria-label={`${s.value} ${s.label.toLowerCase()}`}
-                    className={`group/seg relative h-full min-w-[3px] rounded-[2px] first:rounded-l-[4px] last:rounded-r-[4px] ${fill[s.tone]} outline-offset-2`}
+                    className={`group/seg relative h-full min-w-[3px] after:absolute after:inset-x-0 after:-inset-y-4 after:content-[''] rounded-[2px] first:rounded-l-[4px] last:rounded-r-[4px] ${fill[s.tone]} outline-offset-2`}
                     style={{ flexGrow: s.value, flexBasis: 0 }}
                   >
                     <span className={`pointer-events-none absolute bottom-full z-10 mb-2 whitespace-nowrap ${i === 0 ? "left-0" : "right-0"} rounded bg-ink px-2 py-1 text-[0.8rem] text-paper opacity-0 transition-opacity duration-200 group-hover/seg:opacity-100 group-focus-visible/seg:opacity-100`}>

@@ -17,6 +17,8 @@ export type CaseStudy = {
   summary: string;
   meta: { label: string; value: string }[];
   highlights: string[];
+  // Verbatim result sentences from the case, shown as a summary under the header.
+  outcome: string[];
   blocks: Block[];
 };
 
@@ -34,6 +36,10 @@ const aiInClinicalWorkflows: CaseStudy = {
     { label: "Focus", value: "LLM features, evals, tracing" },
   ],
   highlights: ["16 eval suites", "57 of 60 good, 0 wrong", "~2,500 conversations"],
+  outcome: [
+    "Clinical dictation: tens of thousands of dictation calls since launch, at a cost of a few hundred dollars, with no content loss regressions after the redesign.",
+    "In-app assistant: in the review bank, 57 of 60 answers were good, 3 escalated correctly and 0 were wrong. About 2,500 conversations from about 1,600 users since March 2026.",
+  ],
   blocks: [
     { type: "h2", text: "Context", id: "context" },
     {
@@ -133,6 +139,10 @@ const whenTheBugIsntInYourCode: CaseStudy = {
     { label: "Focus", value: "Network diagnosis" },
   ],
   highlights: ["18 doctors back", "~3 hours", "$0"],
+  outcome: [
+    "The reports stopped and all 18 affected doctors could use Docguía normally again. No code changes, no migration, no new cost.",
+    "The whole change took about 3 hours and cost $0 on Cloudflare's free plan.",
+  ],
   blocks: [
     { type: "h2", text: "Context", id: "context" },
     {

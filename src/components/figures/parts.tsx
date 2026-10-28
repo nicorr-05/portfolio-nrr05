@@ -5,8 +5,8 @@ export type Tone = "field" | "paper";
 
 export function toneClasses(tone: Tone) {
   return tone === "field"
-    ? { box: "bg-field-deep/55 text-on-field", line: "bg-on-field/45", muted: "text-on-field/75", border: "border-on-field/25" }
-    : { box: "bg-paper text-ink border border-rule", line: "bg-muted/50", muted: "text-muted", border: "border-rule" };
+    ? { box: "bg-field-deep/55 text-on-field", line: "bg-on-field/45", muted: "text-on-field/90", border: "border-on-field/25" }
+    : { box: "bg-wash text-ink", line: "bg-muted/50", muted: "text-muted", border: "border-rule" };
 }
 
 export function Node({
@@ -27,7 +27,7 @@ export function Node({
         strong ? (tone === "field" ? "ring-1 ring-on-field/70" : "ring-1 ring-ink") : ""
       }`}
     >
-      <div className={`text-[0.72rem] font-medium tracking-[0.02em] ${t.muted}`}>{label}</div>
+      <div className={`text-[0.78rem] font-medium tracking-[0.02em] ${t.muted}`}>{label}</div>
       {children ? <div className="mt-1 text-[0.92rem] leading-snug">{children}</div> : null}
     </div>
   );

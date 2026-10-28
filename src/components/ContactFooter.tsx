@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { site } from "@/lib/site";
+import { cvs, site } from "@/lib/site";
 import { ArrowUpRight } from "./icons";
 import { LocalTime } from "./LocalTime";
 import { Magnetic } from "./Magnetic";
@@ -9,6 +9,7 @@ const links = [
   { href: `mailto:${site.email}`, label: site.email },
   { href: site.linkedin, label: "LinkedIn", external: true },
   { href: site.github, label: "GitHub", external: true },
+  { href: cvs[0].href, label: "CV (PDF)", download: cvs[0].file },
 ];
 
 export function ContactFooter() {
@@ -47,6 +48,7 @@ export function ContactFooter() {
               <a
                 href={l.href}
                 {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...(l.download ? { download: l.download } : {})}
                 className="group inline-flex items-center gap-2 rounded-full border border-night-rule px-6 py-3.5 text-[1rem] no-underline transition-colors duration-300 hover:border-on-night hover:bg-on-night hover:text-night"
               >
                 {l.label}

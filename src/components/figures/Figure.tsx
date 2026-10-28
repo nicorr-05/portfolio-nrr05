@@ -14,7 +14,7 @@ const labels: Record<FigureId, string> = {
 // Inline figure inside the case article, slightly wider than the text column.
 export function Figure({ id }: { id: FigureId }) {
   return (
-    <figure className="my-12 rounded-xl bg-wash p-5 sm:p-8" aria-label={labels[id]}>
+    <figure className="my-12 border-y border-rule py-8" aria-label={labels[id]}>
       {id === "dictation-flow" && <DictationFlow />}
       {id === "assistant-phases" && <AssistantPhases />}
       {id === "assistant-evals" && <AssistantEvals />}

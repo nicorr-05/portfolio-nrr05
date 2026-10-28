@@ -6,6 +6,7 @@ import { DictationFlow } from "@/components/figures/DictationFlow";
 import { Figure } from "@/components/figures/Figure";
 import { IspRoute } from "@/components/figures/IspRoute";
 import { ArrowRight } from "@/components/icons";
+import { CaseToc } from "@/components/CaseToc";
 import { SiteNav } from "@/components/SiteNav";
 import { type Block, cases, getCase, nextCase } from "@/content/cases";
 
@@ -40,11 +41,11 @@ export default async function CasePage(props: PageProps<"/work/[slug]">) {
       <SiteNav />
       <main>
         <header className="wrap pt-10 pb-16 sm:pt-16 sm:pb-24">
-          <Link href="/#work" className="group inline-flex items-center gap-2 text-[0.95rem] text-muted no-underline hover:text-ink">
+          <Link href="/#work" className="group -my-2 inline-flex min-h-11 items-center gap-2 text-[0.95rem] text-muted no-underline hover:text-ink">
             <ArrowRight className="size-4 rotate-180 transition-transform duration-300 group-hover:-translate-x-0.5" />
             All work
           </Link>
-          <h1 className="headline mt-8 max-w-[19ch] text-[clamp(2.5rem,6.4vw,6rem)]">{c.title}</h1>
+          <h1 className="headline mt-8 max-w-[20ch] text-[clamp(2.3rem,5.2vw,4.75rem)]">{c.title}</h1>
           <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-rule pt-6 md:grid-cols-4">
             {c.meta.map((m) => (
               <div key={m.label}>
@@ -53,6 +54,16 @@ export default async function CasePage(props: PageProps<"/work/[slug]">) {
               </div>
             ))}
           </dl>
+          <div className="mt-12 grid gap-4 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-20 lg:mt-16">
+            <h2 className="text-[0.95rem] font-semibold">Result</h2>
+            <ul className="grid max-w-[64ch] gap-3">
+              {c.outcome.map((o) => (
+                <li key={o} className="text-[1.2rem] leading-[1.5] tracking-[-0.005em] text-pretty">
+                  {o}
+                </li>
+              ))}
+            </ul>
+          </div>
         </header>
 
         <div className="bg-field text-on-field">
@@ -62,17 +73,7 @@ export default async function CasePage(props: PageProps<"/work/[slug]">) {
         </div>
 
         <div className="wrap grid gap-12 py-20 sm:py-28 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-20">
-          <nav aria-label="On this page" className="hidden lg:block">
-            <ul className="sticky top-10 grid gap-2.5 text-[0.92rem]">
-              {toc.map((h) => (
-                <li key={h.id}>
-                  <a href={`#${h.id}`} className="text-muted no-underline transition-colors hover:text-ink">
-                    {h.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <CaseToc items={toc.map((h) => ({ id: h.id, text: h.text }))} />
 
           <article className="prose-measure min-w-0">
             {blocks.map((b, i) => (

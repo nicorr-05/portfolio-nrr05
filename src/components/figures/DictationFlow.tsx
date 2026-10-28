@@ -12,7 +12,7 @@ export function DictationFlow({ tone = "paper", caption = true }: { tone?: Tone;
         <Node tone={tone} label="Planner model" strong>Decides what to change</Node>
         <Link tone={tone} />
         <div className={`rounded-md px-3.5 py-3 ${t.box}`}>
-          <div className={`text-[0.72rem] font-medium tracking-[0.02em] ${t.muted}`}>Executor, three tools only</div>
+          <div className={`text-[0.78rem] font-medium tracking-[0.02em] ${t.muted}`}>Executor, three tools only</div>
           <ul className="mt-2 grid gap-1.5">
             {tools.map((tool) => (
               <li key={tool} className={`rounded border px-2.5 py-1.5 text-[0.85rem] leading-tight ${t.border}`}>

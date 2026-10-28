@@ -21,7 +21,7 @@ export function IspRoute({ tone = "paper", caption = true }: { tone?: Tone; capt
             <Node tone={tone} label="Cloudflare" strong>DNS proxy, SSL Full (strict)</Node>
             <div aria-hidden className="relative flex items-center justify-center self-stretch @xl:self-center">
               <div className={`h-8 w-px ${t.line} @xl:h-px @xl:w-full`} />
-              <span className={`absolute rounded-full px-2 py-0.5 text-[0.7rem] font-medium ${tone === "field" ? "bg-field text-on-field" : "bg-paper text-muted"}`}>
+              <span className={`absolute rounded-full px-2 py-0.5 text-[0.75rem] font-medium ${tone === "field" ? "bg-field text-on-field" : "bg-paper text-muted"}`}>
                 HTTPS
               </span>
             </div>

@@ -13,13 +13,12 @@ export default function Home() {
       <main>
         {/* Intro + CV */}
         <section id="cv" aria-label="About" className="wrap grid gap-14 py-24 sm:py-32 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-24">
-          <p className="max-w-[34ch] text-[clamp(1.45rem,2.6vw,2.1rem)] leading-[1.32] tracking-[-0.012em] text-pretty">
+          <p className="max-w-[34ch] text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.32] tracking-[-0.012em] text-pretty">
             {summary}
           </p>
           <div className="flex flex-col justify-between gap-12">
             <p className="max-w-[36ch] text-muted">
-              Three versions of my CV, one per role I&apos;m hiring for: Forward Deployed Engineer, Senior Software
-              Engineer and Tech Lead.
+              My CV in three versions, one for each role I&apos;m open to.
             </p>
             <CvPicker />
           </div>

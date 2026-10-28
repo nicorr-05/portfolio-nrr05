@@ -18,20 +18,31 @@ export function WorkList({ items }: { items: CaseStudy[] }) {
     if (!el || !card) return;
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     let tx = 0, ty = 0, x = 0, y = 0, raf = 0;
+    // The follow loop runs only while the pointer is over the list.
+    const tick = () => {
+      x += (tx - x) * 0.16;
+      y += (ty - y) * 0.16;
+      card.style.transform = `translate3d(${x}px, ${y}px, 0) translate(32px, -50%)`;
+      raf = requestAnimationFrame(tick);
+    };
+    const enter = (e: PointerEvent) => {
+      x = tx = e.clientX;
+      y = ty = e.clientY;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(tick);
+    };
     const move = (e: PointerEvent) => {
       tx = e.clientX;
       ty = e.clientY;
     };
-    const tick = () => {
-      x += (tx - x) * 0.16;
-      y += (ty - y) * 0.16;
-      card.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-      raf = requestAnimationFrame(tick);
-    };
+    const leave = () => cancelAnimationFrame(raf);
+    el.addEventListener("pointerenter", enter);
     el.addEventListener("pointermove", move);
-    raf = requestAnimationFrame(tick);
+    el.addEventListener("pointerleave", leave);
     return () => {
+      el.removeEventListener("pointerenter", enter);
       el.removeEventListener("pointermove", move);
+      el.removeEventListener("pointerleave", leave);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -53,7 +64,7 @@ export function WorkList({ items }: { items: CaseStudy[] }) {
                 {c.shortTitle}
               </h3>
               <div className="flex flex-col gap-4 text-night-muted">
-                <p className="text-[1rem] leading-relaxed">{c.summary}</p>
+                <p className="text-[1rem] leading-relaxed text-pretty">{c.summary}</p>
                 <p className="flex flex-wrap gap-2">
                   {c.highlights.map((h) => (
                     <span key={h} className="rounded-full border border-night-rule px-3 py-1 text-[0.85rem] text-on-night">

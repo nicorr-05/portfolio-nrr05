@@ -21,7 +21,7 @@ export default function NotFound() {
             <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
-        <Marquee text="Not found 404" className="display pb-[3svh] text-[clamp(6.5rem,19vw,17.5rem)]" />
+        <Marquee text="404 · Not found" className="display pb-[3svh] text-[clamp(6.5rem,19vw,17.5rem)]" />
       </main>
     </div>
   );
