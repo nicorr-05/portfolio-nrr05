@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { CaseStudy } from "@/content/cases";
+import { smart } from "@/lib/typography";
 import { ArrowUpRight } from "./icons";
 import { CasePreview } from "./figures/CasePreview";
 
@@ -61,10 +62,10 @@ export function WorkList({ items }: { items: CaseStudy[] }) {
               }`}
             >
               <h3 className="headline text-[clamp(2.4rem,6.4vw,5.6rem)] transition-transform duration-700 ease-[var(--ease-out)] lg:group-hover:translate-x-4">
-                {c.shortTitle}
+                {smart(c.shortTitle)}
               </h3>
               <div className="flex flex-col gap-4 text-night-muted">
-                <p className="text-[1rem] leading-relaxed text-pretty">{c.summary}</p>
+                <p className="text-[1rem] leading-relaxed text-pretty">{smart(c.summary)}</p>
                 <p className="flex flex-wrap gap-2">
                   {c.highlights.map((h) => (
                     <span key={h} className="rounded-full border border-night-rule px-3 py-1 text-[0.85rem] text-on-night">

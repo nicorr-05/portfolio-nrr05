@@ -36,7 +36,7 @@ export function Hero() {
           </p>
           <p className="mt-4 inline-flex items-center gap-2 text-[0.95rem]">
             <span aria-hidden className="relative flex size-2.5">
-              <span className="absolute inset-0 animate-ping rounded-full bg-go opacity-60 motion-reduce:hidden" />
+              <span className="absolute inset-0 animate-[ping_1.4s_cubic-bezier(0,0,0.2,1)_3] rounded-full bg-go opacity-60 motion-reduce:hidden" />
               <span className="relative size-2.5 rounded-full bg-go" />
             </span>
             Available now, full time
@@ -57,7 +57,7 @@ export function Hero() {
           </span>
         </span>
         <span className="grid size-14 place-items-center rounded-full bg-field">
-          <Globe className="size-6 animate-[spin_14s_linear_infinite] motion-reduce:animate-none" />
+          <Globe className="size-6" />
         </span>
       </div>
 

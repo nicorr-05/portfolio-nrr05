@@ -9,6 +9,7 @@ import { ArrowRight } from "@/components/icons";
 import { CaseToc } from "@/components/CaseToc";
 import { SiteNav } from "@/components/SiteNav";
 import { type Block, cases, getCase, nextCase } from "@/content/cases";
+import { smart } from "@/lib/typography";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -45,7 +46,7 @@ export default async function CasePage(props: PageProps<"/work/[slug]">) {
             <ArrowRight className="size-4 rotate-180 transition-transform duration-300 group-hover:-translate-x-0.5" />
             All work
           </Link>
-          <h1 className="headline mt-8 max-w-[20ch] text-[clamp(2.3rem,5.2vw,4.75rem)]">{c.title}</h1>
+          <h1 className="headline mt-8 max-w-[20ch] text-[clamp(2.3rem,5.2vw,4.75rem)]">{smart(c.title)}</h1>
           <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-rule pt-6 md:grid-cols-4">
             {c.meta.map((m) => (
               <div key={m.label}>
@@ -59,7 +60,7 @@ export default async function CasePage(props: PageProps<"/work/[slug]">) {
             <ul className="grid max-w-[64ch] gap-3">
               {c.outcome.map((o) => (
                 <li key={o} className="text-[1.2rem] leading-[1.5] tracking-[-0.005em] text-pretty">
-                  {o}
+                  {smart(o)}
                 </li>
               ))}
             </ul>
@@ -87,7 +88,7 @@ export default async function CasePage(props: PageProps<"/work/[slug]">) {
             <span className="text-[0.95rem] text-muted">Next case</span>
             <span className="mt-4 flex items-end justify-between gap-8">
               <span className="headline max-w-[16ch] text-[clamp(2.4rem,6vw,5.5rem)] transition-transform duration-700 ease-[var(--ease-out)] group-hover:translate-x-3">
-                {next.shortTitle}
+                {smart(next.shortTitle)}
               </span>
               <span className="mb-3 grid size-16 shrink-0 place-items-center rounded-full border border-rule transition-colors duration-300 group-hover:border-ink group-hover:bg-ink group-hover:text-paper sm:size-20">
                 <ArrowRight className="size-6" />
@@ -106,20 +107,20 @@ function CaseBlock({ block, first }: { block: Block; first: boolean }) {
     case "h2":
       return (
         <h2 id={block.id} className={`headline scroll-mt-10 text-[clamp(1.9rem,3.4vw,2.6rem)] ${first ? "" : "mt-20"} mb-6`}>
-          {block.text}
+          {smart(block.text)}
         </h2>
       );
     case "h3":
-      return <h3 className="mt-10 mb-3 text-[1.15rem] font-semibold tracking-[-0.005em]">{block.text}</h3>;
+      return <h3 className="mt-10 mb-3 text-[1.15rem] font-semibold tracking-[-0.005em]">{smart(block.text)}</h3>;
     case "p":
-      return <p className="mb-5 text-[1.125rem] leading-[1.7] text-pretty">{block.text}</p>;
+      return <p className="mb-5 text-[1.125rem] leading-[1.7] text-pretty">{smart(block.text)}</p>;
     case "ul":
       return (
         <ul className="mb-6 grid gap-3">
           {block.items.map((item) => (
             <li key={item} className="relative pl-6 text-[1.125rem] leading-[1.65]">
               <span aria-hidden className="absolute left-1 top-[0.62em] size-1.5 rounded-full bg-ink" />
-              {item}
+              {smart(item)}
             </li>
           ))}
         </ul>

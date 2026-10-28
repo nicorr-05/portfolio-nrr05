@@ -116,6 +116,11 @@ html {
   scrollbar-color: var(--muted) var(--paper);
 }
 
+a,
+button {
+  touch-action: manipulation;
+}
+
 a {
   text-underline-offset: 0.22em;
   text-decoration-thickness: 1px;
