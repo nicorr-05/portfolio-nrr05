@@ -1,0 +1,20 @@
+// Change SITE_URL once a custom domain is attached in Vercel.
+export const SITE_URL = "https://nicorr05.vercel.app";
+
+export const site = {
+  name: "Nicolás Restrepo",
+  title: "Forward Deployed Engineer. Full stack and applied AI.",
+  description:
+    "Nicolás Restrepo is a Forward Deployed Engineer: full stack and applied AI. Founding engineer and CTO of Docguía, a healthcare platform with 7,000+ daily active users. Available now, remote from LATAM (GMT-4).",
+  email: "nrestrepo.r05@gmail.com",
+  linkedin: "https://www.linkedin.com/in/nicorr05/",
+  github: "https://github.com/nicorr-05",
+  location: "Remote, LATAM (GMT-4)",
+  timeZone: "America/Caracas",
+} as const;
+
+export const cvs = [
+  { label: "Forward Deployed Engineer", short: "FDE", href: "/cv/nicolas-restrepo-fde.pdf" },
+  { label: "Senior Software Engineer", short: "Senior SWE", href: "/cv/nicolas-restrepo-senior-swe.pdf" },
+  { label: "Tech Lead", short: "Tech Lead", href: "/cv/nicolas-restrepo-tech-lead.pdf" },
+] as const;

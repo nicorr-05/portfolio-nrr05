@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/*
+  Marquee world: a photo-gray field owns the hero, paper carries reading,
+  a night band frames the work and the contact. One live accent: the green
+  availability dot. Archivo (condensed via wdth) speaks, Hanken Grotesk reads.
+*/
+:root {
+  --paper: oklch(0.972 0.003 250);
+  --ink: oklch(0.2 0.008 255);
+  --muted: oklch(0.45 0.01 255);
+  --rule: oklch(0.87 0.005 250);
+  --wash: oklch(0.94 0.004 250);
+
+  --field: oklch(0.5 0.008 250);
+  --on-field: oklch(0.985 0.002 250);
+  --field-deep: oklch(0.2 0.006 255);
+
+  --night: oklch(0.18 0.006 255);
+  --on-night: oklch(0.95 0.004 250);
+  --night-muted: oklch(0.72 0.008 250);
+  --night-rule: oklch(0.32 0.006 255);
+  --night-wash: oklch(0.24 0.006 255);
+
+  --go: oklch(0.72 0.17 150);
+
+  /* Status steps for charts (dataviz reference palette, fixed across themes). */
+  --status-good: #0ca30c;
+  --status-neutral: oklch(0.62 0.012 255);
+  --status-critical: #d03b3b;
+
+  --gutter: clamp(20px, 4vw, 56px);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: oklch(0.155 0.005 255);
+    --ink: oklch(0.94 0.004 250);
+    --muted: oklch(0.72 0.008 250);
+    --rule: oklch(0.29 0.006 255);
+    --wash: oklch(0.2 0.006 255);
+
+    --field: oklch(0.27 0.006 255);
+    --on-field: oklch(0.97 0.003 250);
+    --field-deep: oklch(0.12 0.004 255);
+
+    --night: oklch(0.205 0.006 255);
+    --on-night: oklch(0.95 0.004 250);
+    --night-muted: oklch(0.74 0.008 250);
+    --night-rule: oklch(0.33 0.006 255);
+    --night-wash: oklch(0.26 0.006 255);
+
+    --status-neutral: oklch(0.6 0.01 255);
+
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-wash: var(--wash);
+  --color-field: var(--field);
+  --color-on-field: var(--on-field);
+  --color-field-deep: var(--field-deep);
+  --color-night: var(--night);
+  --color-on-night: var(--on-night);
+  --color-night-muted: var(--night-muted);
+  --color-night-rule: var(--night-rule);
+  --color-go: var(--go);
+  --color-status-good: var(--status-good);
+  --color-status-neutral: var(--status-neutral);
+  --color-status-critical: var(--status-critical);
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+html {
+  scrollbar-color: var(--muted) var(--paper);
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 75;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 80;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.prose-measure {
+  max-width: 68ch;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
