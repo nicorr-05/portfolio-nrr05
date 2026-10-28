@@ -16,7 +16,7 @@ export default function Home() {
           <p className="max-w-[34ch] text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.32] tracking-[-0.012em] text-pretty">
             {summary}
           </p>
-          <div className="flex flex-col justify-between gap-12">
+          <div className="flex flex-col justify-end gap-6">
             <p className="max-w-[36ch] text-muted">
               My CV in three versions, one for each role I&apos;m open to.
             </p>
