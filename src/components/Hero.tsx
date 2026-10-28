@@ -16,19 +16,19 @@ export function Hero() {
       <Image
         src={portrait}
         alt="Nicolás Restrepo"
-        loading="eager"
+        preload
         fetchPriority="high"
         placeholder="empty"
         quality={70}
-        sizes="(max-width: 640px) 620px, 1100px"
-        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[80%] w-auto max-w-none -translate-x-1/2 select-none object-contain object-bottom [mask-image:linear-gradient(to_right,transparent,black_14%,black_86%,transparent)] sm:h-[96%] lg:h-[104%]"
+        sizes="(max-width: 640px) 560px, 1100px"
+        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[80%] w-auto max-w-none -translate-x-1/2 select-none object-contain object-bottom [mask-image:linear-gradient(to_right,transparent,black_14%,black_86%,transparent)] lg:h-[104%]"
       />
 
       <div className="wrap relative flex flex-1 flex-col">
         {/* Role: top on phones, mid-right on larger screens */}
-        <div className="mt-2 max-w-[17rem] sm:absolute sm:right-[var(--gutter)] sm:top-[24%] sm:mt-0 sm:max-w-[19rem] lg:top-[30%]">
-          <ArrowDownRight className="mb-5 hidden size-7 sm:block" />
-          <h1 id="hero-title" className="text-[1.65rem] leading-[1.12] font-medium tracking-[-0.015em] text-balance sm:text-[2.1rem]">
+        <div className="mt-2 max-w-[19rem] lg:absolute lg:right-[var(--gutter)] lg:top-[30%] lg:mt-0">
+          <ArrowDownRight className="mb-5 hidden size-7 lg:block" />
+          <h1 id="hero-title" className="text-[1.65rem] leading-[1.12] font-medium tracking-[-0.015em] text-balance md:text-[2rem] lg:text-[2.1rem]">
             Forward Deployed Engineer
           </h1>
           <p className="mt-3 text-[1rem] leading-snug opacity-90 sm:text-[1.0625rem]">
@@ -41,14 +41,14 @@ export function Hero() {
             </span>
             Available now, full time
           </p>
-          <p className="mt-1 text-[0.95rem] opacity-90 sm:hidden">
+          <p className="mt-1 text-[0.95rem] opacity-90 lg:hidden">
             Remote, LATAM · GMT-4 · <LocalTime />
           </p>
         </div>
       </div>
 
       {/* Location pill, anchored to the left edge like a tag */}
-      <div className="absolute left-0 top-[44%] hidden items-center gap-6 rounded-r-full bg-field-deep py-4 pr-4 pl-[var(--gutter)] text-[0.95rem] leading-tight sm:flex">
+      <div className="absolute left-0 top-[44%] hidden items-center gap-6 rounded-r-full bg-field-deep py-4 pr-4 pl-[var(--gutter)] text-[0.95rem] leading-tight lg:flex">
         <span>
           Remote, LATAM
           <br />

@@ -9,12 +9,11 @@ export const site = {
   email: "nrestrepo.r05@gmail.com",
   linkedin: "https://www.linkedin.com/in/nicorr05/",
   github: "https://github.com/nicorr-05",
-  location: "Remote, LATAM (GMT-4)",
   timeZone: "America/Caracas",
 } as const;
 
 export const cvs = [
-  { label: "Forward Deployed Engineer", short: "FDE", href: "/cv/nicolas-restrepo-fde.pdf", file: "Nicolas-Restrepo-CV-FDE.pdf" },
-  { label: "Senior Software Engineer", short: "Senior SWE", href: "/cv/nicolas-restrepo-senior-swe.pdf", file: "Nicolas-Restrepo-CV-Senior-SWE.pdf" },
-  { label: "Tech Lead", short: "Tech Lead", href: "/cv/nicolas-restrepo-tech-lead.pdf", file: "Nicolas-Restrepo-CV-Tech-Lead.pdf" },
+  { label: "Forward Deployed Engineer", href: "/cv/nicolas-restrepo-fde.pdf", file: "Nicolas-Restrepo-CV-FDE.pdf" },
+  { label: "Senior Software Engineer", href: "/cv/nicolas-restrepo-senior-swe.pdf", file: "Nicolas-Restrepo-CV-Senior-SWE.pdf" },
+  { label: "Tech Lead", href: "/cv/nicolas-restrepo-tech-lead.pdf", file: "Nicolas-Restrepo-CV-Tech-Lead.pdf" },
 ] as const;

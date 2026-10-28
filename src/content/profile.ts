@@ -47,9 +47,3 @@ export const stack: { group: string; items: string[] }[] = [
   { group: "Infrastructure", items: ["AWS", "Vercel", "Cloudflare"] },
   { group: "Applied AI", items: ["Vercel AI SDK", "LangChain", "LangGraph", "Evals and tracing for LLM features"] },
 ];
-
-export const facts = [
-  { label: "Availability", value: "Immediate, full time, overlap with US hours" },
-  { label: "Location", value: "Remote, LATAM (GMT-4)" },
-  { label: "Languages", value: "Spanish (native), English (professional)" },
-];
