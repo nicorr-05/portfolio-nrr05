@@ -14,7 +14,7 @@ export const site = {
 } as const;
 
 export const cvs = [
-  { label: "Forward Deployed Engineer", short: "FDE", href: "/cv/nicolas-restrepo-fde.pdf" },
-  { label: "Senior Software Engineer", short: "Senior SWE", href: "/cv/nicolas-restrepo-senior-swe.pdf" },
-  { label: "Tech Lead", short: "Tech Lead", href: "/cv/nicolas-restrepo-tech-lead.pdf" },
+  { label: "Forward Deployed Engineer", short: "FDE", href: "/cv/nicolas-restrepo-fde.pdf", file: "Nicolas-Restrepo-CV-FDE.pdf" },
+  { label: "Senior Software Engineer", short: "Senior SWE", href: "/cv/nicolas-restrepo-senior-swe.pdf", file: "Nicolas-Restrepo-CV-Senior-SWE.pdf" },
+  { label: "Tech Lead", short: "Tech Lead", href: "/cv/nicolas-restrepo-tech-lead.pdf", file: "Nicolas-Restrepo-CV-Tech-Lead.pdf" },
 ] as const;

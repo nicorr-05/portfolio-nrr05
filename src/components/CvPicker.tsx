@@ -43,7 +43,7 @@ export function CvPicker() {
           <li key={cv.href} className="border-t border-rule last:border-b">
             <a
               href={cv.href}
-              download
+              download={cv.file}
               className="group flex items-center justify-between gap-6 py-4 no-underline"
             >
               <span>
