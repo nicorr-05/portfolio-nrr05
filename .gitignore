@@ -44,3 +44,6 @@ next-env.d.ts
 .claude/skills/impeccable/scripts/bin/
 .claude/settings.local.json
 .impeccable/config.local.json
+
+# private interview notes and held-out evals, never committed
+/.private/
