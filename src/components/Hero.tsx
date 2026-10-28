@@ -16,10 +16,12 @@ export function Hero() {
       <Image
         src={portrait}
         alt="Nicolás Restrepo"
-        priority
+        loading="eager"
+        fetchPriority="high"
         placeholder="empty"
-        sizes="(max-width: 640px) 140vw, (max-width: 1024px) 90vw, 60vw"
-        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[78%] w-auto max-w-none -translate-x-1/2 select-none object-contain object-bottom [mask-image:linear-gradient(to_right,transparent,black_14%,black_86%,transparent)] sm:h-[86%]"
+        quality={70}
+        sizes="(max-width: 640px) 620px, 960px"
+        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[80%] w-auto max-w-none -translate-x-1/2 select-none object-contain object-bottom [mask-image:linear-gradient(to_right,transparent,black_14%,black_86%,transparent)] sm:h-[96%]"
       />
 
       <div className="wrap relative flex flex-1 flex-col">
